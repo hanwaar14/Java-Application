@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>springboot-test</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>springboot-test</name>
+    <description>Spring Boot testing application</description>
+
+    <properties>
+        <java.version>11</java.version> <!-- Set Java version to 11 -->
+        <spring-boot.version>2.7.5</spring-boot.version> <!-- Spring Boot version -->
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version> <!-- Use Spring Boot version -->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot.version}</version> <!-- Use Spring Boot version -->
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Maven Compiler Plugin to specify Java version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- Make sure the plugin version is recent -->
+                <configuration>
+                    <source>11</source> <!-- Set the Java source version -->
+                    <target>11</target> <!-- Set the Java target version -->
+                </configuration>
+            </plugin>
+            <!-- Spring Boot Maven Plugin -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version> <!-- Specify version for the plugin -->
+            </plugin>
+        </plugins>
+    </build>
+</project>
